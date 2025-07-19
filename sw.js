@@ -2,7 +2,7 @@ const CACHE_NAME = 'barcelona-guide-v2';
 const urlsToCache = [
   '/',
   'index.html',
-  'icon-192.png',
+  'IMG_20250719_175246_(192_x_192_ピクセル).png',
   'IMG_20250719_175300_(512_x_512_ピクセル).png'
 ];
 
