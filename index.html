@@ -17,8 +17,8 @@
       --card-bg: #ffffff;
       --text-color: #333333;
       --text-secondary: #666666;
-      --header-bg: rgba(26, 58, 95, 0.9);
-      --footer-bg: rgba(26, 58, 95, 0.9);
+      --header-bg: rgba(26, 58, 95, 0.95);
+      --footer-bg: rgba(26, 58, 95, 0.95);
       --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
     }
@@ -49,15 +49,13 @@
       color: var(--text-color);
       transition: var(--transition);
       line-height: 1.6;
-      padding-top: 80px;
-      padding-bottom: 80px;
       min-height: 100vh;
       position: relative;
     }
 
-    /* ヘッダースタイル */
+    /* ヘッダースタイル - スクロールで隠れる */
     header {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -79,7 +77,7 @@
     }
 
     .logo h1 {
-      font-size: 1.5rem;
+      font-size: 1.8rem; /* タイトルを大きく */
       font-weight: 700;
       color: white;
       background: linear-gradient(90deg, #f8b400, #ff6b6b);
@@ -136,18 +134,20 @@
       color: white;
     }
 
-    /* メインコンテンツ */
+    /* メインコンテンツ - スクロール領域を広く */
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 100px 20px 80px;
     }
 
     .page-title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       position: relative;
       padding-bottom: 15px;
+      font-size: 2.2rem;
+      color: var(--primary-color);
     }
 
     .page-title::after {
@@ -156,8 +156,8 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
+      width: 100px;
+      height: 5px;
       background: var(--secondary-color);
       border-radius: 2px;
     }
@@ -166,7 +166,7 @@
     .attractions-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
+      gap: 30px;
       margin-bottom: 40px;
     }
 
@@ -189,7 +189,7 @@
 
     .card-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       border-bottom: 4px solid var(--secondary-color);
     }
@@ -202,7 +202,7 @@
     }
 
     .card-title {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       margin-bottom: 10px;
       color: var(--text-color);
     }
@@ -211,9 +211,9 @@
       display: inline-block;
       background: var(--primary-color);
       color: white;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       margin-bottom: 15px;
     }
 
@@ -221,6 +221,7 @@
       color: var(--text-secondary);
       margin-bottom: 15px;
       flex-grow: 1;
+      font-size: 0.95rem;
     }
 
     .card-link {
@@ -235,6 +236,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      font-size: 0.95rem;
     }
 
     .card-link:hover {
@@ -262,6 +264,7 @@
       border: none;
       cursor: pointer;
       font-weight: 600;
+      font-size: 1rem;
     }
 
     .back-button:hover {
@@ -278,7 +281,7 @@
 
     .detail-image {
       width: 100%;
-      height: 350px;
+      height: 400px;
       object-fit: cover;
     }
 
@@ -287,7 +290,7 @@
     }
 
     .detail-title {
-      font-size: 2rem;
+      font-size: 2.3rem;
       margin-bottom: 15px;
       color: var(--text-color);
     }
@@ -295,9 +298,9 @@
     .detail-category {
       background: var(--primary-color);
       color: white;
-      padding: 6px 15px;
+      padding: 8px 18px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-bottom: 20px;
       display: inline-block;
     }
@@ -306,13 +309,14 @@
       margin-bottom: 25px;
       color: var(--text-color);
       line-height: 1.8;
+      font-size: 1.1rem;
     }
 
     .transport-section {
       background: rgba(78, 159, 61, 0.1);
       border-radius: 10px;
-      padding: 20px;
-      margin: 25px 0;
+      padding: 25px;
+      margin: 30px 0;
     }
 
     .section-title {
@@ -320,19 +324,20 @@
       align-items: center;
       gap: 10px;
       color: var(--accent-color);
-      margin-bottom: 15px;
-      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
     }
 
     .section-title svg {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       fill: currentColor;
     }
 
     .transport-info {
       color: var(--text-color);
-      margin-bottom: 15px;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
     }
 
     .official-link {
@@ -341,12 +346,13 @@
       gap: 8px;
       background: var(--accent-color);
       color: white;
-      padding: 10px 25px;
+      padding: 12px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
-      margin-top: 10px;
+      margin-top: 15px;
+      font-size: 1.1rem;
     }
 
     .official-link:hover {
@@ -354,18 +360,18 @@
       transform: translateY(-2px);
     }
 
-    /* フッター */
+    /* フッター - スクロールで隠れる */
     footer {
-      position: fixed;
+      position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       background: var(--footer-bg);
       backdrop-filter: blur(10px);
-      padding: 15px 20px;
+      padding: 20px;
       text-align: center;
       color: white;
-      font-size: 0.9rem;
+      font-size: 1rem;
       z-index: 1000;
       transition: var(--transition);
     }
@@ -375,6 +381,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
+      font-size: 1.05rem;
     }
 
     .contact-link:hover {
@@ -389,16 +396,16 @@
       }
       
       .logo h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
       
       .btn {
-        padding: 6px 12px;
-        font-size: 0.9rem;
+        padding: 7px 14px;
+        font-size: 0.95rem;
       }
       
       .detail-image {
-        height: 250px;
+        height: 300px;
       }
       
       .detail-content {
@@ -406,41 +413,51 @@
       }
       
       .detail-title {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
+      }
+
+      .page-title {
+        font-size: 1.9rem;
+      }
+
+      main {
+        padding: 90px 20px 70px;
       }
     }
 
     @media (max-width: 480px) {
-      body {
-        padding-top: 70px;
-        padding-bottom: 70px;
-      }
-      
-      header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
+      .logo h1 {
+        font-size: 1.3rem;
       }
       
       .controls {
-        width: 100%;
-        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
       }
       
-      .logo h1 {
-        font-size: 1.1rem;
+      .logo {
+        flex-direction: column;
+        gap: 5px;
       }
       
       .btn {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
       
       .page-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
       }
       
       .detail-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+      }
+
+      main {
+        padding: 110px 15px 70px;
+      }
+
+      .detail-image {
+        height: 250px;
       }
     }
   </style>
@@ -452,6 +469,7 @@
       <h1>Barcelona Travel Guide</h1>
     </div>
     <div class="controls">
+      <!-- ボタンの順序を変更: 言語 → テーマ -->
       <button id="langBtn" class="btn lang">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
           <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
@@ -520,7 +538,7 @@
   </footer>
 
   <script>
-    // 観光名所データ
+    // 観光名所データ（英語とスペイン語）
     const attractionsData = {
       en: [
         {
@@ -645,128 +663,9 @@
         }
       ],
       es: [
-        // スペイン語データ（省略）
-      ]
-    };
-
-    // 初期化
-    let currentLang = 'en';
-    let currentAttraction = null;
-
-    // DOM要素の取得
-    const mainPage = document.getElementById('mainPage');
-    const detailPage = document.getElementById('detailPage');
-    const attractionsList = document.getElementById('attractionsList');
-    const backButton = document.getElementById('backButton');
-    const langButton = document.getElementById('langBtn');
-    const themeButton = document.getElementById('themeBtn');
-    const detailImg = document.getElementById('detailImg');
-    const detailCategory = document.getElementById('detailCategory');
-    const detailTitle = document.getElementById('detailTitle');
-    const detailDescription = document.getElementById('detailDescription');
-    const airportTransport = document.getElementById('airportTransport');
-    const cityTransport = document.getElementById('cityTransport');
-    const officialLink = document.getElementById('officialLink');
-
-    // アトラクションリストの表示
-    function renderAttractionsList() {
-      attractionsList.innerHTML = '';
-      
-      attractionsData[currentLang].forEach(attraction => {
-        const card = document.createElement('div');
-        card.className = 'attraction-card';
-        card.innerHTML = `
-          <img src="${attraction.image}" alt="${attraction.name}" class="card-image">
-          <div class="card-content">
-            <h3 class="card-title">${attraction.name}</h3>
-            <span class="card-category">${attraction.category}</span>
-            <p class="card-description">${attraction.description.substring(0, 100)}...</p>
-            <a href="#" class="card-link" data-id="${attraction.id}">
-              View Details
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg>
-            </a>
-          </div>
-        `;
-        attractionsList.appendChild(card);
-      });
-      
-      // 詳細ページへのリンクイベント
-      document.querySelectorAll('.card-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const id = link.getAttribute('data-id');
-          showAttractionDetail(id);
-        });
-      });
-    }
-
-    // 詳細ページの表示
-    function showAttractionDetail(id) {
-      const attraction = attractionsData[currentLang].find(a => a.id === id);
-      if (!attraction) return;
-      
-      currentAttraction = attraction;
-      
-      detailImg.src = attraction.image;
-      detailImg.alt = attraction.name;
-      detailCategory.textContent = attraction.category;
-      detailTitle.textContent = attraction.name;
-      detailDescription.textContent = attraction.description;
-      airportTransport.textContent = attraction.airportTransport;
-      cityTransport.textContent = attraction.cityTransport;
-      officialLink.href = attraction.officialLink;
-      
-      mainPage.style.display = 'none';
-      detailPage.style.display = 'block';
-    }
-
-    // メインページに戻る
-    function goBackToList() {
-      mainPage.style.display = 'block';
-      detailPage.style.display = 'none';
-      currentAttraction = null;
-    }
-
-    // 言語切り替え
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'es' : 'en';
-      langButton.textContent = currentLang === 'en' ? 'English' : 'Español';
-      
-      if (currentAttraction) {
-        showAttractionDetail(currentAttraction.id);
-      } else {
-        renderAttractionsList();
-      }
-    }
-
-    // テーマ切り替え
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      themeButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
-    }
-
-    // イベントリスナーの設定
-    backButton.addEventListener('click', goBackToList);
-    langButton.addEventListener('click', toggleLanguage);
-    themeButton.addEventListener('click', toggleTheme);
-
-    // PWA Service Workerの登録
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(registration => {
-            console.log('ServiceWorker registered:', registration);
-          })
-          .catch(error => {
-            console.log('ServiceWorker registration failed:', error);
-          });
-      });
-    }
-
-    // 初期表示
-    renderAttractionsList();
-  </script>
-</body>
-</html>
+        {
+          id: "sagrada-familia",
+          name: "Sagrada Família",
+          category: "Obra maestra de Gaudí",
+          image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800",
+          description: "La obra maestra
